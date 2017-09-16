@@ -54,7 +54,7 @@ public class SearchItem extends HttpServlet {
         JSONObject obj = item.toJSONObject();
         // Check if this is a favorite one.
         // This field is required by frontend to correctly display favorite items.
-        obj.put("favorite", favorite.contains(item.getItemId()));
+        obj.put("favorite", favorite.contains(item.getItem_id()));
 
         list.add(obj);
       }

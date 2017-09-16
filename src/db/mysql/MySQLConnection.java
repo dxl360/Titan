@@ -178,7 +178,7 @@ public class MySQLConnection implements DBConnection {
       String sql = "INSERT IGNORE INTO items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
       PreparedStatement statement = conn.prepareStatement(sql);
-      statement.setString(1, item.getItemId());
+      statement.setString(1, item.getItem_id());
       statement.setString(2, item.getName());
       statement.setString(3, item.getCity());
       statement.setString(4, item.getState());
@@ -191,7 +191,7 @@ public class MySQLConnection implements DBConnection {
       statement.setString(11, item.getDescription());
       statement.setString(12, item.getSnippet());
       statement.setString(13, item.getSnippetUrl());
-      statement.setString(14, item.getImageUrl());
+      statement.setString(14, item.getImage_url());
       statement.setString(15, item.getUrl());
       statement.execute();
 
@@ -199,7 +199,7 @@ public class MySQLConnection implements DBConnection {
       sql = "INSERT IGNORE INTO categories VALUES (?,?)";
       for (String category : item.getCategories()) {
         statement = conn.prepareStatement(sql);
-        statement.setString(1, item.getItemId());
+        statement.setString(1, item.getItem_id());
         statement.setString(2, category);
         statement.execute();
       }

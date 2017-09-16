@@ -24,7 +24,7 @@ public class Item {
 	private String snippet;
 	private String snippetUrl;
 
-	public String getItemId() {
+	public String getItem_id() {
 		return itemId;
 	}
 	public String getName() {
@@ -60,7 +60,7 @@ public class Item {
 	public Set<String> getCategories() {
 		return categories;
 	}
-	public String getImageUrl() {
+	public String getImage_url() {
 		return imageUrl;
 	}
 	public String getUrl() {

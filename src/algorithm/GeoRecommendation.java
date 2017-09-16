@@ -26,6 +26,10 @@ public class GeoRecommendation implements Recommendation {
     }
 
     Set<Item> recommendedItems = new HashSet<>();  // step 3
+    allCategories.remove("Undefined");
+    if (allCategories.isEmpty()) {
+    allCategories.add("");
+    }
     for (String category : allCategories) {
       List<Item> items = conn.searchItems(userId, lat, lon, category);  // call external API
       recommendedItems.addAll(items);
@@ -39,7 +43,7 @@ public class GeoRecommendation implements Recommendation {
     // Answer: because we will have ranking now.
     List<Item> filteredItems = new ArrayList<>();  // step 4
     for (Item item : recommendedItems) {
-      if (!favoriteItems.contains(item.getItemId())) {
+      if (!favoriteItems.contains(item.getItem_id())) {
         filteredItems.add(item);
       }
     }
